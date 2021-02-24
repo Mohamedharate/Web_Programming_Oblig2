@@ -9,24 +9,25 @@ function regBillett(){
     const antall = $("#inpAntall");
 
     let feil = false;
-    if ($("#antall").length === 0){
+
+    if (antall.val() === ""){
         feil = true;
         $("#feilMedlingAntall").html("Må skrive noe inn i antall");
     }
-    if ($("#fornavn").length === 0){
+    if (fornavn.val() === ""){
         feil = true;
         $("#feilMedlingFornavn").html("Må skrive noe inn i fornavnet")
     }
 
-    if($("#etternavn").length === 0){
+    if(etternavn.val() === ""){
         feil = true;
         $("#feilMedlingEtternavn").html("Må skrive noe inn i ettnavnet")
     }
-    if ($("#telefonnr").length === 0){
+    if (telefonnr.val() === ""){
         feil = true;
         $("#feilMedlingTlfnr").html("Må skrive noe inn i telefonnr")
     }
-    if ($("#mail").length === 0){
+    if (mail.val() === ""){
         feil = true;
         $("#feilMedlingEpost").html("Må skrive noe inn i epost")
     }
@@ -44,6 +45,14 @@ function regBillett(){
         $.post("/lagre", billett, function (){
             hentAlle();
         })
+
+        antall.val("");
+        fornavn.val("");
+        etternavn.val("");
+        telefonnr.val("");
+        mail.val("");
+
+
 
     }
 }
