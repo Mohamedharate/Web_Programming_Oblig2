@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+    <title>Oblig 2</title>
+</head>
+
+<body>
+<div class="container">
+    <form id="form">
+        <div class="overskrift">
+            <h1>Bestilling av kinobilletter</h1>
+        </div>
+        <div class="row">
+            <div class="left">
+                <label for="film">Velg film: </label>
+            </div>
+            <div class="middle">
+                <select id="film">
+                    <option>Velg film</option>
+                    <option>Film1</option>
+                    <option>Film2</option>
+                    <option>Film3</option>
+                    <option>Film4</option>
+                    <option>Film5</option>
+                    <option>Film6</option>
+                    <option>Film7</option>
+                </select>
+            </div>
+            <div class="right">
+                <label for="film"></label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="left">
+                <label for="inpAntall">Antall</label>
+            </div>
+            <div class="middle">
+                <input  id="inpAntall" type="number">
+            </div>
+            <div class="right">
+                <label for="inpAntall" id="feilMedlingAntall" class="feilMelding"></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="left">
+                <label for="inpFornavn">Fornavn</label>
+            </div>
+            <div class="middle">
+                <input id="inpFornavn" type="text">
+            </div>
+            <div class="right">
+                <label for="inpFornavn" id="feilMedlingFornavn" class="feilMelding"></label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="left">
+                <label for="inpEtternavn">Etternavn</label>
+            </div>
+            <div class="middle">
+                <input id="inpEtternavn" type="text">
+            </div>
+            <div class="right">
+                <label for="inpEtternavn" id="feilMedlingEtternavn" class="feilMelding"></label>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="left">
+                <label for="inpTelefonnr">Telefonnummer</label>
+            </div>
+            <div class="middle">
+                <input id="inpTelefonnr" type="text">
+            </div>
+            <div class="right">
+                <label for="inpFornavn" id="feilMedlingTlfnr" class="feilMelding"></label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="left">
+                <label for="inpEpost">Epost</label>
+            </div>
+            <div class="middle">
+                <input id="inpEpost" type="text">
+            </div>
+            <div class="right">
+                <label for="inpFornavn" id="feilMedlingEpost" class="feilMelding"></label>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<div>
+    <button id="btnKjop" onclick="regBillett()">Kjøp billett</button><br>
+    <h1>Alle Billetter</h1>
+    <div id="billettene">
+
+    </div>
+
+
+    <button type="button" onclick="slettBilletter()">Slett alle</button>
+</div>
+</body>
+</html>
