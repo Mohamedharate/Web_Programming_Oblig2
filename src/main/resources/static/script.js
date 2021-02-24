@@ -2,7 +2,7 @@
 
 
 
-
+const film = $("#film");
 const fornavn = $("#inpFornavn");
 const etternavn = $("#inpEtternavn");
 const telefonnr = $("#inpTelefonnr");
@@ -44,7 +44,7 @@ function regBillett(){
 
     if (!feil){
         const billett = {
-            film: $("#film").val(),
+            film: film.val(),
             fornavn : fornavn.val(),
             etternavn : etternavn.val(),
             telefonnr : telefonnr.val(),

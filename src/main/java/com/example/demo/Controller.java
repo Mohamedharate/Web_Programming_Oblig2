@@ -17,10 +17,12 @@ public class Controller {
     public void lagreBillett(Billett billett){
         alleBilletter.add(billett);
     }
+
     @GetMapping("/hentAlle")
     public List<Billett> hentAlle(){
         return alleBilletter;
     }
+
     @GetMapping("/slettAlle")
     public void slettAlle(){
         alleBilletter.clear();
