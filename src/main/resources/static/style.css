@@ -1,0 +1,56 @@
+label{
+    display: inline-block;
+    padding: 12px 12px 12px 0;
+}
+input[type=number]{
+    height: 25px;
+}
+input[type=text], select, textarea {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+.container {
+    width: 100%;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+.overskrift{
+    width: 100%;
+}
+.left {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.middle {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+}
+.right{
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+#alleBillettene{
+    display: none;
+    text-align: left;
+}
+td,th{
+    padding: 10px 10px;
+}
+
+.feilMelding{
+    color: red;
+}
