@@ -10,27 +10,25 @@ function regBillett(){
 
     let feil = false;
 
-    if (antall.val() === ""){
+    if (antall.val() === "" || antall.val() <= 0){
         feil = true;
-        $("#feilMedlingAntall").html("Må skrive noe inn i antall");
     }
+
     if (fornavn.val() === ""){
         feil = true;
-        $("#feilMedlingFornavn").html("Må skrive noe inn i fornavnet")
     }
 
     if(etternavn.val() === ""){
         feil = true;
-        $("#feilMedlingEtternavn").html("Må skrive noe inn i ettnavnet")
     }
     if (telefonnr.val() === ""){
         feil = true;
-        $("#feilMedlingTlfnr").html("Må skrive noe inn i telefonnr")
     }
     if (mail.val() === ""){
         feil = true;
-        $("#feilMedlingEpost").html("Må skrive noe inn i epost")
     }
+
+
 
     if (!feil){
         const billett = {
@@ -46,13 +44,13 @@ function regBillett(){
             hentAlle();
         })
 
+
+
         antall.val("");
         fornavn.val("");
         etternavn.val("");
         telefonnr.val("");
         mail.val("");
-
-
 
     }
 }
@@ -65,18 +63,16 @@ function hentAlle(){
 
 
 function formaterData(billetter){
-    let ut = "<table><tr><th>Film</th><th>Antall</th><th>Fornavn</th><th>Etternavn</th><th>Telefonnummer</th><th>Epost</th></tr>";
+    let ut = "<h1>Alle Billetter</h1><table class='table table-striped table-bordered'><tr><th>Film</th><th>Antall</th><th>Fornavn</th><th>Etternavn</th><th>Telefonnummer</th><th>Epost</th></tr>";
     for (const billett of billetter){
         ut += "<tr><td>"+billett.film+"</td><td>"+billett.antall+"</td><td>"+billett.fornavn+"</td><td>"+billett.etternavn+"</td>" +
             "<td>"+billett.telefonnr+"</td><td>"+billett.mail+"</td></tr>";
     }
-    ut += "</table>"
+    ut += "</table> <button onclick=\"slettBilletter()\" class=\"w-100 btn btn-primary btn-lg\" type=\"submit\">Slett alle</button>"
     $("#billettene").html(ut);
 }
 
 function slettBilletter(){
-   // billettArray = [];
-   // alleBillettene.html("")
 
     $.get("/slettAlle", function (){
        hentAlle();

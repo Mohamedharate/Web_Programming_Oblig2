@@ -1,113 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Oblig 2</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+          crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <meta charset="UTF-8">
-    <title>Oblig 2</title>
 </head>
 
 <body>
-<div class="container">
-    <form id="form">
-        <div class="overskrift">
-            <h1>Bestilling av kinobilletter</h1>
-        </div>
-        <div class="row">
-            <div class="left">
-                <label for="film">Velg film: </label>
-            </div>
-            <div class="middle">
-                <select id="film">
-                    <option>Velg film</option>
-                    <option>Film1</option>
-                    <option>Film2</option>
-                    <option>Film3</option>
-                    <option>Film4</option>
-                    <option>Film5</option>
-                    <option>Film6</option>
-                    <option>Film7</option>
+
+    <div class="container">
+        <main>
+        <h1 class="mb-3">Bestilling av kinobilletter</h1>
+
+        <form class="needs-validation was-validated">
+
+        <div class="row g-3">
+
+            <div class="col-sm-6">
+                <label for="film" class="form-label">Velg film</label>
+                <select id="film" class="form-control" required>
+                    <option value="">Velg film</option>
+                    <option>Dirty Dancing 2</option>
+                    <option>Queen</option>
+                    <option>Grease</option>
+                    <option>King Kong</option>
+                    <option>All About Eve</option>
+                    <option>Top Hat</option>
+                    <option>Marty</option>
                 </select>
             </div>
-            <div class="right">
-                <label for="film" id="feilMeldingFilm"></label>
+
+            <div class="col-sm-6">
+                <label for="inpAntall" class="form-label">Antall</label>
+                <input type="number"  id="inpAntall" class="form-control" placeholder value required>
+                <div id="feilMedlingAntall" class="invalid-feedback">Skriv inn gyldig antall!</div>
             </div>
+
+            <div class="col-sm-6">
+                <label for="inpFornavn" class="form-label">Fornavn</label>
+                <input class="form-control" id="inpFornavn" type="text" placeholder value required>
+                <div id="feilMedlingFornavn" class="invalid-feedback">Skriv inn fornavn</div>
+            </div>
+
+            <div class="col-sm-6">
+                <label for="inpEtternavn" class="form-label" >Etternavn</label>
+                <input class="form-control" id="inpEtternavn" type="text" placeholder value required>
+                <div id="feilMedlingEtternavn" class="invalid-feedback">Skriv inn etternavn</div>
+            </div>
+
+            <div class="col-sm-6">
+                <label for="inpEpost" class="form-label">Epost</label>
+                <input class="form-control" id="inpEpost" type="email" placeholder value required>
+                <div id="feilMedlingEpost" class="invalid-feedback">Skriv inn e-post</div>
+            </div>
+
+            <div class="col-sm-6">
+                <label for="inpTelefonnr" class="form-label">Telefonnummer</label>
+                <input id="inpTelefonnr" class="form-control" type="text" placeholder value required>
+                <div id="feilMedlingTlfnr" class="invalid-feedback">Skriv inn telefonnummer</div>
+            </div>
+
+            <button id="btnKjop" onclick="regBillett()" class="w-100 btn btn-primary btn-lg" type="submit">Kjøp billett</button>
+
+
+
         </div>
+        </form>
+            <div class="row g-3">
+                <div class="col-md-12" >
 
-        <div class="row">
-            <div class="left">
-                <label for="inpAntall">Antall</label>
-            </div>
-            <div class="middle">
-                <input  id="inpAntall" type="number" min="0">
-            </div>
-            <div class="right">
-                <label for="inpAntall" id="feilMedlingAntall" class="feilMelding"></label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="left">
-                <label for="inpFornavn">Fornavn</label>
-            </div>
-            <div class="middle">
-                <input id="inpFornavn" type="text">
-            </div>
-            <div class="right">
-                <label for="inpFornavn" id="feilMedlingFornavn" class="feilMelding"></label>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="left">
-                <label for="inpEtternavn">Etternavn</label>
-            </div>
-            <div class="middle">
-                <input id="inpEtternavn" type="text">
-            </div>
-            <div class="right">
-                <label for="inpEtternavn" id="feilMedlingEtternavn" class="feilMelding"></label>
-            </div>
-        </div>
+                    <div id="billettene"></div>
 
 
-        <div class="row">
-            <div class="left">
-                <label for="inpTelefonnr">Telefonnummer</label>
-            </div>
-            <div class="middle">
-                <input id="inpTelefonnr" type="text">
-            </div>
-            <div class="right">
-                <label for="inpFornavn" id="feilMedlingTlfnr" class="feilMelding"></label>
-            </div>
-        </div>
+                </div>
 
-        <div class="row">
-            <div class="left">
-                <label for="inpEpost">Epost</label>
             </div>
-            <div class="middle">
-                <input id="inpEpost" type="text">
-            </div>
-            <div class="right">
-                <label for="inpFornavn" id="feilMedlingEpost" class="feilMelding"></label>
-            </div>
-        </div>
 
-    </form>
-</div>
-
-<div>
-    <button id="btnKjop" onclick="regBillett()">Kjøp billett</button><br>
-    <h1>Alle Billetter</h1>
-    <div id="billettene">
-
-    </div>
-
-
-    <button type="button" onclick="slettBilletter()">Slett alle</button>
+</main>
 </div>
 </body>
 </html>
