@@ -27,7 +27,7 @@
             <div class="col-sm-6">
                 <label for="film" class="form-label">Velg film</label>
                 <select id="film" class="form-control" required>
-                    <option value>Velg film</option>
+                    <option value="">Velg film</option>
                     <option>Dirty Dancing 2</option>
                     <option>Queen</option>
                     <option>Grease</option>
@@ -76,9 +76,10 @@
         </form>
             <div class="row g-3">
                 <div class="col-md-12" >
+                    <h1>Alle Billetter</h1>
 
                     <div id="billettene"></div>
-
+                    <button onclick="slettBilletter()" class="w-100 btn btn-primary btn-lg" type="submit">Slett alle</button>
 
                 </div>
 
