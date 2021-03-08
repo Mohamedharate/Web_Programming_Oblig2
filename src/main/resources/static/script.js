@@ -7,6 +7,8 @@ function regBillett(){
     const telefonnr = $("#inpTelefonnr");
     const mail = $("#inpEpost");
     const antall = $("#inpAntall");
+    const mailformat = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
+
 
     let feil = false;
 
@@ -24,11 +26,9 @@ function regBillett(){
     if (telefonnr.val() === ""){
         feil = true;
     }
-    if (mail.val() === ""){
+    if (mail.val() === "" || !mail.val().match(mailformat)){
         feil = true;
     }
-
-
 
     if (!feil){
         const billett = {
@@ -77,4 +77,5 @@ function slettBilletter(){
     $.get("/slettAlle", function (){
        hentAlle();
     });
+    $("billettene").html(null)
 }
