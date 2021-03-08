@@ -26,10 +26,11 @@ function regBillett(){
     if (telefonnr.val() === ""){
         feil = true;
     }
-    if (mail.val() === "" || !mail.val().match(mailformat)){
+    if (mail.val() === ""){
         feil = true;
     }
 
+//|| !mail.val().match(mailformat)
     if (!feil){
         const billett = {
             film: film.val(),
@@ -45,12 +46,12 @@ function regBillett(){
         })
 
 
-
         antall.val("");
         fornavn.val("");
         etternavn.val("");
         telefonnr.val("");
         mail.val("");
+
 
     }
 }
@@ -63,12 +64,12 @@ function hentAlle(){
 
 
 function formaterData(billetter){
-    let ut = "<h1>Alle Billetter</h1><table class='table table-striped table-bordered'><tr><th>Film</th><th>Antall</th><th>Fornavn</th><th>Etternavn</th><th>Telefonnummer</th><th>Epost</th></tr>";
+    let ut = "<h1>Alle Billetter</h1>\n<table class='table table-striped table-bordered'><tr><th>Film</th><th>Antall</th><th>Fornavn</th><th>Etternavn</th><th>Telefonnummer</th><th>Epost</th></tr>";
     for (const billett of billetter){
         ut += "<tr><td>"+billett.film+"</td><td>"+billett.antall+"</td><td>"+billett.fornavn+"</td><td>"+billett.etternavn+"</td>" +
             "<td>"+billett.telefonnr+"</td><td>"+billett.mail+"</td></tr>";
     }
-    ut += "</table> <button onclick=\"slettBilletter()\" class=\"w-100 btn btn-primary btn-lg\" type=\"submit\">Slett alle</button>"
+    ut += "</table><button onclick=\"slettBilletter()\" class=\"w-100 btn btn-primary btn-lg\" type=\"submit\">Slett alle</button>"
     $("#billettene").html(ut);
 }
 
@@ -77,5 +78,4 @@ function slettBilletter(){
     $.get("/slettAlle", function (){
        hentAlle();
     });
-    $("billettene").html(null)
 }
