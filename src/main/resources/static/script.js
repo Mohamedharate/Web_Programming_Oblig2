@@ -35,7 +35,6 @@ function regBillett(){
     const antall = $("#inpAntall");
     //const mailformat = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
 
-    /*
     if (antall.val() === "" || antall.val() <= 0){
         feil = true;
         //$("#feilMedlingAntall").className = 'invalid-feedback d-block'
@@ -61,12 +60,12 @@ function regBillett(){
     }
 
 
-     */
+
 
 
 
 //|| !mail.val().match(mailformat)
-    while (!feil){
+    if (!feil){
 
         const billett = {
             film: film.val(),
