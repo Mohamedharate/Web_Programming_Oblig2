@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Oblig 2</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+          crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+    <main>
+        <h1 class="mb-3">Bestilling av kinobilletter</h1>
+
+        <form class="needs-validation" novalidate>
+
+            <div class="row g-3">
+
+                <div class="col-sm-6">
+                    <label for="film" class="form-label">Velg film</label>
+                    <select id="film" class="form-select">
+                        <option value="">Velg film</option>
+                        <option>Dirty Dancing 2</option>
+                        <option>Queen</option>
+                        <option>Grease</option>
+                        <option>King Kong</option>
+                        <option>All About Eve</option>
+                        <option>Top Hat</option>
+                        <option>Marty</option>
+                    </select>
+                    <div class="invalid-feedback">Du må velge en film</div>
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="inpAntall" class="form-label">Antall</label>
+                    <input type="number"  id="inpAntall" class="form-control">
+                    <div id="feilMedlingAntall"  class="invalid-feedback">Skriv inn gyldig antall!</div>
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="inpFornavn" class="form-label">Fornavn</label>
+                    <input class="form-control" id="inpFornavn" type="text">
+                    <div id="feilMedlingFornavn" class="invalid-feedback">Skriv inn fornavn</div>
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="inpEtternavn" class="form-label" >Etternavn</label>
+                    <input class="form-control" id="inpEtternavn" type="text">
+                    <div id="feilMedlingEtternavn"  class="invalid-feedback">Skriv inn etternavn</div>
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="inpEpost" class="form-label">Epost</label>
+                    <input class="form-control" id="inpEpost" type="email">
+                    <div id="feilMedlingEpost"  class="invalid-feedback">Skriv inn e-post</div>
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="inpTelefonnr" class="form-label">Telefonnummer</label>
+                    <input id="inpTelefonnr" class="form-control" type="text">
+                    <div id="feilMedlingTlfnr" class="invalid-feedback">Skriv inn telefonnummer</div>
+                </div>
+                <hr class="my-4">
+
+                <button id="btnKjop" onclick="regBillett()" class="w-100 btn btn-primary btn-lg" >Continue to checkout</button>
+
+
+            </div>
+        </form>
+        <div class="row g-3">
+            <div class="col-md-12" >
+                <h1>Alle Billetter</h1>
+
+                <div id="billettene"></div>
+                <hr class="my-4">
+
+                <button onclick="slettBilletter()" class="w-100 btn btn-secondary btn-lg">Slett alle</button>
+            </div>
+        </div>
+
+    </main>
+</div>
+</body>
+</html>
