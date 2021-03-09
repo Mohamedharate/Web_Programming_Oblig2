@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Title</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+          crossorigin="anonymous">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+    <link rel="stylesheet" href="style.css">
+
+
+
+</head>
+<body>
+<div class="container">
+    <main>
+        <h1 class="mb-3">Bestilling av kinobilletter</h1>
+        <form class="row g-3 needs-validation" novalidate>
+            <div class="col-sm-6">
+                <label for="film" class="form-label">Velg film</label>
+                <select class="form-select" id="film" required>
+                    <option selected disabled value="">Velg film</option>
+                    <option>Dirty Dancing 2</option>
+                    <option>Queen</option>
+                    <option>Grease</option>
+                    <option>King Kong</option>
+                    <option>All About Eve</option>
+                    <option>Top Hat</option>
+                    <option>Marty</option>
+                </select>
+                <div class="invalid-feedback">Du må velge en film</div>
+            </div>
+            <div class="col-sm-6">
+                <label for="inpAntall" class="form-label">Antall</label>
+                <input type="number" class="form-control" id="inpAntall" required>
+                <div class="invalid-feedback" id="feilMedlingAntall">Skriv inn gyldig antall!</div>
+            </div>
+            <div class="col-sm-6">
+                <label for="inpFornavn" class="form-label">Fornavn</label>
+                <input class="form-control" id="inpFornavn" type="text" required>
+                <div class="invalid-feedback" id="feilMedlingFornavn">Skriv inn fornavn</div>
+            </div>
+            <div class="col-sm-6">
+                <label for="inpEtternavn" class="form-label" >Etternavn</label>
+                <input class="form-control" id="inpEtternavn" type="text" required>
+                <div id="feilMedlingEtternavn"  class="invalid-feedback">Skriv inn etternavn</div>
+            </div>
+            <div class="col-sm-6">
+                <label for="inpEpost" class="form-label">Epost</label>
+                <input class="form-control" id="inpEpost" type="email" required>
+                <div id="feilMedlingEpost"  class="invalid-feedback">Skriv inn e-post</div>
+            </div>
+            <div class="col-sm-6">
+                <label for="inpTelefonnr" class="form-label">Telefonnummer</label>
+                <input id="inpTelefonnr" class="form-control" type="text" required>
+                <div class="invalid-feedback" id="feilMedlingTlfnr">Skriv inn telefonnummer</div>
+            </div>
+            <div class="col-12">
+                <button class="col-12 btn btn-primary" onclick="regBillett()" type="submit">Kjøp billett</button>
+            </div>
+        </form>
+        <div class="row g-3">
+            <h1>Alle Billetter</h1>
+
+            <div id="billettene"></div>
+            <button class="btn btn-secondary" onclick="slettBilletter()">Slett</button>
+        </div>
+
+    </main>
+
+
+</div>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>
