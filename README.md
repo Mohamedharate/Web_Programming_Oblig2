@@ -1,13 +1,15 @@
 Oblig X
 =======
-OsloMet brukernavn:
+OsloMet brukernavn: s338673
 
-GitHub brukernavn:
+GitHub brukernavn: mohamedharate
 
-GitHub repo URL:
+GitHub repo URL: https://github.com/DATA1700/oblig-2-Mohamedharate.git
 
-URL til Heroku app:
+URL til Heroku app: http://oblig-2-mohamedharate.herokuapp.com/
 
-Fullt navn:
+Fullt navn: Mohamed Khir Harate
 
 Kort beskrivelse av applikasjon (5–10 setninger):
+
+Brukte oblig 1. Lagde en klasse som heter Billett. 
