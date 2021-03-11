@@ -18,6 +18,7 @@
         })
 })()
 
+
 function regBillett(){
 
 
@@ -64,7 +65,6 @@ function regBillett(){
         $.post("/lagre", billett, function (){
             hentAlle();
         })
-
 
         film.val("");
         antall.val("");
